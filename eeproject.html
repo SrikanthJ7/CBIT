@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EE Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/response.css">
+</head>
+
+<style>
+    @media screen and (max-width : 1000px){
+    body{
+        background-color: rgb(238, 233, 231);
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+     .logo img{
+        padding: 20px;
+    } 
+    nav ul{
+        /* height: 88px; */
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    nav ul li a{
+        font-size: 1rem;
+        padding: 0px 7px;
+        padding-bottom: 8px;
+    }
+    #home{
+        height: 380px;
+        padding: 3px 68px;
+    }
+    #home::before{
+        height: 480px;
+    }
+    .h-one{
+        font-size: ;
+    }
+    .btn{
+        padding: 4px 8px;
+        font-size: 13px;
+    }
+    #services .box{
+    background-color: rgb(243, 236, 236);
+    border: 2px solid brown;
+    padding: 15px;
+    margin: 1px 13px;
+    border-radius: 20px;
+    color:rgba(29, 12, 12, 0.911);
+    font-family: 'Times New Roman', Times, serif;
+    }
+    #service .box img {
+        height: 290px;
+        margin: auto;
+        display: block;
+    }
+    
+}
+    html{
+    scroll-behavior: smooth;
+}
+.center{
+    text-align: center;
+}
+nav ul{
+    height: 88px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 99px;
+    padding: 0 25px;
+}
+nav{
+    display: flex;
+    position:sticky;
+    top: 0px;
+}
+nav::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    opacity: 0.4;
+}
+nav ul li{
+    list-style: none;
+    /* padding:0 45px; */
+}
+nav ul li a{
+    padding:0 25px;
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    /* padding:0 25px; */
+    color: white;
+    background-color:black ;
+    border: 1.3rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+}
+#home h1{
+    color:black;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+#home p{
+    color: aliceblue;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+#home::before{
+    content: "";
+    background:url(https://www.mcall.com/resizer/N3n1pCwLAB8PsiJQ1ZJfopjFK1w=/1200x0/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/D5FRMX5GSZCGJBJEEMLUIUHD2U.JPG) no-repeat center center/cover ;
+    position: absolute;
+    height: 85%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    opacity: 0.96;
+}
+#service{
+    display: flex;
+    flex-direction: column;
+}
+
+#service .box{
+    background-color: rgb(243, 236, 236);
+    border: 2px solid brown;
+    padding: 25px;
+    margin: 1px 3px;
+    border-radius: 20px;
+    color:rgba(29, 12, 12, 0.911);
+    font-family: 'Times New Roman', Times, serif;
+}
+#service .box p{
+    font-size: 25px;
+    color: brown;
+}
+#service .box img{
+    height: 250px;
+    margin: auto;
+    display: block;
+}
+.h-one{
+    font-size: 2rem;
+    padding: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.h-two{
+    font-size: 2rem;
+    padding: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn{
+     color: aliceblue;;
+    background-color: saddlebrown;
+    border: 2px solid white;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+#menu{
+    padding: 0 10px 30px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-gap: 20px 40px;
+}
+.heading{
+    background-color: rgb(55, 51, 51);
+    color: white;
+    margin-bottom: 30px;
+    padding: 30px 0;
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.heading h1{
+    font-weight: 400px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+.heading h3{
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+.fooditems{
+    display: grid;
+    position: relative;
+    grid-template-rows: auto auto auto;
+    border-radius: 15px;
+}
+
+.fooditems img{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    border-radius: 15px;
+}
+
+h1{
+    grid-column: 1/-1;
+    text-align: center;
+}
+.details{
+    padding: 20px 10px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 15px;
+}
+.detailssub{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.detailssub h5{
+    font-weight: 600;
+    font-size: 18px;
+}
+.price{
+   text-align: right; 
+}
+.details p{
+    color: black;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+    align-self: stretch;
+}
+.details button{
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    width: 180px;
+}
+.details button:hover{
+    cursor: pointer;
+}
+ .fa{
+    padding: 20px;
+    font-size: 30px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+    transition: 1s ease;
+    transform: rotate(360deg);
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+    border-radius: 10px;
+  }
+
+  .fa-instagram {
+    background:  #9e3ca9;
+    color: white;
+    border-radius: 10px;
+  } 
+  .section{
+    width: 100%;
+  }
+  .section .container{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  .container .title{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .container .title h1{
+    text-transform: uppercase;
+    font-size: 35px;
+    color: #88941e;
+  }
+  .container .title h1::after{
+    content: "";
+    height: 5px;
+    width: 100px;
+    background-color: #c4d156;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+  }
+  .content{
+    float: left;
+    width: 55%;
+  }
+  .image{
+    float: right;
+    margin: 10px;
+    width: 40%;
+    /* height: 100%; */
+  }
+  .image img{
+    width: 100%;
+    height: auto;
+  }
+  .content .article h1{
+    color: #d46b2a;
+    font-size: 35px;
+    text-align: left;
+  }
+  .content .article p{
+    margin-top: 20px;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+
+    line-height: 1.5;
+    color: rgb(10, 10, 9);
+  }
+  .content .article .button{
+    margin-top: 50px;
+  }
+  .content .article .button a{
+    text-decoration: none;
+    padding: 8px 25px;
+    background-color: #88941e;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    /* margin-bottom: 50px; */
+  }
+  .content .article .button a:hover{
+    color: #fff;
+    background-color: #f28f92;
+    transition: 1s ease;
+  }
+  .container .social{
+    width: 100%;
+    clear: both;
+    margin-top: 50px;
+    text-align: center;
+    display: inline-block;
+  }
+footer{
+    background-color: black;
+    color: bisque;
+    margin-top: 25px;
+}
+
+
+</style>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.sl39gVDxeDJ3yZMp8XNrvwHaHa&pid=Api&P=0" alt="">
+        </div>
+        <ul>
+            <li>
+                <a href="#home">HOME</a>
+                <a href="#menu">MENU</a>
+                <a href="#service">INDIAN SPICES</a>
+                <a href="#section">ABOUT US</a>
+            </li>
+
+        </ul>
+
+    </nav>
+    <section id="home">
+        <h1 class="h-one">WELCOME TO ROYAL RESTAURANT</h1>
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur commodi totam distinctio. Quaerat quia
+            minima esse eos quae repellat quos, obcaecati est veritatis inventore, ratione architecto doloribus beatae
+            laborum voluptatibus.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus velit repellendus illum nisi quasi earum
+            unde recusandae maiores quisquam assumenda quos deleniti doloremque, voluptas laborum ut exercitationem.
+            Optio, quo. Quisquam!</p> -->
+        <a href="#menu"><button class="btn">ORDER NOW</button></a>
+    </section>
+    <section class="service-container">
+        <h1 class="h-one center">INDIAN SPICES</h1>
+        <div id="service">
+            <div class="box">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.qzLITySdb_NvxwuR34_fOQHaE6&pid=Api&P=0" alt="">
+                <h2 class="h-two center">BLACK PEPPER</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quidem   in vero ullam quo omnis hic unde assumenda laudantium sint dolores tenetur veritatis, earum odit cumque magni. Ea,
+                qui magni.
+                </p>
+            </div>
+            <div class="box">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.QE4q2l9ex_S3r17CKkfEpwHaFN&pid=Api&P=0" alt="">
+                <h2 class="h-two center">CINNAMON</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quidem   in vero ullam quo omnis hic unde assumenda laudantium sint dolores tenetur veritatis, earum odit cumque magni. Ea,
+                qui magni.
+                </p>
+            </div>
+            <div class="box">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.OEAR4tUc5xZU01bKD6naGAHaHa&pid=Api&P=0" alt="">
+                <h2 class="h-two center">CLOVE</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quidem   in vero ullam quo omnis hic unde assumenda laudantium sint dolores tenetur veritatis, earum odit cumque magni. Ea,
+                qui magni.
+                </p>
+            </div>
+            <div class="box">
+                <img src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1197516/910/606/m2/fpnw/wm1/inrkrqank1rue58is8ctdpafqeodgvshjnphxugh8voidj0igvjumozlm9iiploz-.jpg?1461176723&s=432655e8928538c8d86c41852e31e0a2" alt="">
+                <h2 class="h-two center">RED CHILLI</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quidem   in vero ullam quo omnis hic unde assumenda laudantium sint dolores tenetur veritatis, earum odit cumque magni. Ea,
+                qui magni.
+                </p>
+            </div>
+            <div class="box">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.tkVwscLa8BbeL0GGMNGQHwHaEL&pid=Api&P=0" alt="">
+                <h2 class="h-two center">CARDAMOM</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quidem   in vero ullam quo omnis hic unde assumenda laudantium sint dolores tenetur veritatis, earum odit cumque magni. Ea,
+                qui magni.
+                </p>
+            </div>
+            <div class="box">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.WViPKZ9miiECefPqjv0mBQHaFA&pid=Api&P=00" alt="">
+                <h2 class="h-two center">TURMERIC</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quidem   in vero ullam quo omnis hic unde assumenda laudantium sint dolores tenetur veritatis, earum odit cumque magni. Ea,
+                qui magni.
+                </p>
+            </div>
+        </div>
+    </section>
+    <div id="menu">
+        <div class="heading">
+            <!-- <h1>SPICE KITCHEN</h1> -->
+            <h3>&mdash; MENU &mdash;</h3>
+        </div>
+        <div class="fooditems">
+            <img src="https://myfoodstory.com/wp-content/uploads/2021/10/Veg-Manchurian-FI-1.jpg">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Veg Manchurian</h5>
+                    <h5 class="price"> ₹219 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+        <div class="fooditems">
+            <img src="https://www.ticklingpalates.com/wp-content/uploads/2020/09/chilli-paneer-recipe-500x500.jpg">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Chilli Panner</h5>
+                    <h5 class="price"> ₹239 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+        <div class="fooditems">
+            <img src="https://images.slurrp.com/prod/recipe_images/transcribe/snacks/Chicken_Lollipop.webp">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Chicken Lollipop</h5>
+                    <h5 class="price"> ₹249 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+        
+        <div class="fooditems">
+            <img src="https://tandoorikitchen.in/wp-content/uploads/2022/03/Hyderabadi-chicken-Biryani.jpg">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Hyderabadi Chicken Biryani</h5>
+                    <h5 class="price"> ₹349 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+        <div class="fooditems">
+            <img src="https://www.ticklingpalates.com/wp-content/uploads/2020/09/vegetable-dum-biryani-500x500.jpg">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Veg Dum Biryani</h5>
+                    <h5 class="price"> ₹319 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+        <div class="fooditems">
+            <img src="https://static.toiimg.com/thumb/54672891.cms?imgsize=226897&width=800&height=800">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Hyderabadi Haleem</h5>
+                    <h5 class="price"> ₹349 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+        <div class="fooditems">
+            <img src="https://www.us2guntur.com/images//10071img/Naan_B_010321.jpg">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Butter Naan</h5>
+                    <h5 class="price"> ₹30 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+        <div class="fooditems">
+            <img src="https://www.licious.in/blog/wp-content/uploads/2020/10/butter-chicken-.jpg">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Butter Chicken</h5>
+                    <h5 class="price"> ₹299 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+
+        <div class="fooditems">
+            <img src="https://hyderabadibiryaniandbbq.com/wp-content/uploads/2021/06/Paneer-Butter-Masalaa.jpg">
+            <div class="details">
+                <div class="detailssub">
+                    <h5>Panner Butter Masala</h5>
+                    <h5 class="price"> ₹349 </h5>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, praesentium?</p>
+                <button>Add</button>
+            </div>
+        </div>
+    </div>
+    <div id="section">
+        <div class="container">
+            <div class="title">
+                <h1>About Us</h1>
+            </div>
+            <div class="content">
+                <div class="article">
+                    <h1>FAB FOUR</h1>
+                    <p>We are a group of four students from First year CSE department who have done this website as a part of Engineering Exploration(EE) project. We created a website for a restaurent by the name Spice kitchen using HTML(HyperText Markup Language) and CSS(Cascading Style Sheets). We were constantly mentored by Ms.Anila ma'am of computer science department who guided us throughout the journey of creating the website.</p>
+                    <p>
+                        160121733164-A.Meghanath Reddy
+                    </p>
+                    <p>160121733175-G Sai Likhith</p>
+                    <p>160121733176-G.Vishnu Prasad</p>
+                    <p>160121733189-P.Suraj</p>
+                    <div class="button">
+                        <a href="">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="image">
+                <img src="https://www.thestatesman.com/wp-content/uploads/2019/03/spices.jpg" alt="Image not found">
+            </div>
+            ! <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>  
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+<footer>
+    <div class="center">
+        Copyright &copy; www.fabfour.com
+    </div>
+</footer>
+
+
+
+</body>
+
+</html>
